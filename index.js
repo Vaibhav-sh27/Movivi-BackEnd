@@ -16,7 +16,7 @@ mongoose.connect(process.env.mongoURI)
 
 // seedDB();
 
-var whitelist = ['http://localhost:5173','http://localhost:5174', 'http://www.omdbapi.com/?apikey=3439ea05']
+var whitelist = ['http://localhost:5173','http://localhost:5174', 'http://www.omdbapi.com/?apikey=3439ea05', 'https://movivi.netlify.app']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
