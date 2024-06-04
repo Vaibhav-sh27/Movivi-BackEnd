@@ -68,7 +68,8 @@ router.patch('/playlist/edit/:id', async (req, res)=>{
     try {
         let {name, access} = req.body;
         let {id} = req.params;
-        let data=await playlist.findByIdAndUpdate(id, {name, access});
+        await playlist.findByIdAndUpdate(id, {name, access});
+        let data = await playlist.findById(id);
         console.log(data);
         res.status(201).json({msg: 'playlist Updated', data});
     } catch (err) {
